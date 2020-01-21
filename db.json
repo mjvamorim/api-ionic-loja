@@ -2,7 +2,7 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "Hambúrguer 7",
+      "nome": "Hambúrguer",
       "descricao": "Pão, bife de hambúrguer 90g, salada e batata.",
       "preco": "8.5",
       "categoria_id": "1"
@@ -11,8 +11,8 @@
       "id": 2,
       "nome": "X-Búrguer",
       "descricao": "Pão, bife de hambúrguer 90g, 1 fatia de queijo, salada e batata.",
-      "preco": 10.5,
-      "categoria_id": 1
+      "preco": "10.5",
+      "categoria_id": "1"
     },
     {
       "id": 3,

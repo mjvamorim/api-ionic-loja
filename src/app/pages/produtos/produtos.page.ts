@@ -22,15 +22,15 @@ export class ProdutosPage implements OnInit {
     this.produtos = this.api.getAll();
   }
 
+  ngOnInit() {}
+
   addProduto(){
     this.router.navigate(['form-produtos', 0]);
   }
   editProduto(id: number) {
     this.router.navigate(['form-produtos', id]);
-    this.getAll();
   }
   removeProduto(id: number){
     this.api.delete(id).subscribe(data => { this.getAll() });
-    //this.getAll();
   }
 }
