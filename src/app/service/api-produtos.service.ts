@@ -49,7 +49,6 @@ export class ApiProdutosService {
       )
   }
 
-  // Get single produto data by ID
   get(id): Observable<Produto> {
     return this.http
       .get<Produto>(this.baseUrl + '/' + id)
@@ -82,7 +81,7 @@ export class ApiProdutosService {
   // Delete item by id
   delete(id) {
     return this.http
-      .delete<Produto>(this.baseUrl + '/' + id, this.httpOptions)
+      .delete(this.baseUrl + '/' + id, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)

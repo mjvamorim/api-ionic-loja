@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Produto } from '../../models/produto';
+import { Produto } from 'src/app/models/produto';
 import { ApiProdutosService } from 'src/app/service/api-produtos.service';
 import { Observable } from 'rxjs';
 
@@ -14,22 +14,23 @@ export class ProdutosPage implements OnInit {
   produto: Produto;
 
   constructor(private router: Router, private api:ApiProdutosService ) {
-      this.getProdutos();
+    this.getAll();
   }
 
-  async getProdutos() {
+  async getAll() {
     //this.produtos = [{"id":6,"nome":"Ricardo","qtde":109},{"id":13,"nome":"Fernanda","qtde":8}];
     this.produtos = this.api.getAll();
   }
-  ngOnInit() {
-  }
+
   addProduto(){
     this.router.navigate(['form-produtos', 0]);
   }
   editProduto(id: number) {
     this.router.navigate(['form-produtos', id]);
+    this.getAll();
   }
   removeProduto(id: number){
-
+    this.api.delete(id).subscribe(data => { this.getAll() });
+    //this.getAll();
   }
 }
