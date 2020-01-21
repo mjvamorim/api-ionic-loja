@@ -42,7 +42,4 @@ export class FormProdutosPage implements OnInit {
       });
     }
   }
-
-
-
 }
